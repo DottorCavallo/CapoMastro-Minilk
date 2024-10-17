@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheda Personaggio Mercantile</title>
+    <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'MedievalSharp', serif;
+            background-color: #2e2e2e; /* Sfondo scuro */
+            color: #f0e6d6; /* Testo chiaro */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+       .character-card {
+    background-image: url('https://i.pinimg.com/736x/f4/05/80/f40580b4f52cf6aa80ea974d60384423.jpg');
+    background-size: cover; /* Estende l'immagine per coprire l'intera area */
+    background-position: center; /* Centra l'immagine */
+    background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 800px; /* Larghezza aumentata */
+    margin: auto;
+    padding: 30px;
+    border: 3px solid #d4af37; /* Bordo dorato */
+    position: relative;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Maggiore trasparenza per un effetto di dissolvenza più forte */
+    position: absolute; /* Posiziona l'overlay in modo assoluto */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Porta l'overlay sopra l'immagine di sfondo */
+}
+
+        .avatar {
+            width: 500px; /* Dimensione fissa per l'immagine */
+            height: 500px; /* Altezza fissa per l'immagine */
+            }
+
+        .name {
+            font-size: 108px; /* Dimensione del nome */
+            margin: 10px 0;
+            font-weight: bold;
+            text-shadow: 5px 5px #000; /* Ombra del testo per un effetto di profondità */
+        }
+
+        .info {
+            font-size: 16px; /* Dimensione aumentata per le info */
+            color: #d4af37; /* Colore dorato per le informazioni */
+              margin-top: -20px;
+            margin-bottom: 20px;
+    letter-spacing: 2px; /* Aumenta lo spazio tra le lettere */
+word-spacing: 8px; /* Aumenta lo spazio tra le parole */
+
+background-color: #d4af37; /* Colore oro per il badge */
+            color: #000; /* Testo scuro per contrasto */
+            padding: 1px 1px;
+            border-radius: 5px;
+            position: center;
+            font-weight: bold;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between; /* Spazio tra gli elementi */
+            align-items: flex-start; /* Allinea verticalmente all'inizio */
+        }
+
+        .box {
+            flex-basis: calc(50% - 10px); /* Larghezza uguale con margine */
+            background-color: rgba(255, 255, 255, 0.1); /* Sfondo traslucido */
+            border-radius: 30px;
+            padding: 15px;
+            box-shadow: inset 0 0 10px rgba(255,255,255,0.1); /* Ombra interna per profondità */
+letter-spacing: 2px; /* Aumenta lo spazio tra le lettere */
+        }
+   
+
+        .scroll-container {
+            overflow-y: auto; /* Abilita lo scorrimento verticale */
+            height: 300px; /* Altezza fissa per il contenitore con scorrimento */
+        }
+
+        .title {
+            background-color: #d4af37; /* Colore oro per il titolo del box */
+            color: white; /* Testo bianco */
+            font-size: 26px; 
+            padding: 5px;
+            border-radius: 15px;
+            letter-spacing: 8px; /* Aumenta lo spazio tra le lettere */
+text-shadow: 3px 3px #000; /* Ombra del testo per un effetto di profondità */
+
+        }
+
+        h2 {
+            color: #d4af37; /* Colore dorato per i titoli interni */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            font-family: georgia, sans-serif; /* Font pulito per il testo interno */
+        }
+
+        .music-player {
+            margin-top: 20px;
+        }
+
+        .badge {
+            background-color: #d4af37; /* Colore oro per il badge */
+            color: #000; /* Testo scuro per contrasto */
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: -10px; 
+            left: -10px; 
+            font-weight: bold;
+        }
+
+        /* Stile della barra di scorrimento personalizzata */
+        ::-webkit-scrollbar {
+          width: 8px; /* Larghezza della scrollbar */
+          background-color: rgba(255,255,255,0.1); /* Sfondo della scrollbar */
+          border-radius: 10px; 
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background-color: #d4af37; /* Colore della parte mobile della scrollbar (thumb) */
+          border-radius: 10px; 
+          border-right: solid transparent 3px; 
+          border-left : solid transparent 3px; 
+          box-shadow : inset -3 -3 rgba(255,255,255,.2);
+          opacity : .9;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="character-card">
+      <span class="badge">CAPO MASTRO</span>
+      <h1 class="name">Minilk</h1>
+      
+      <div class="info">
+        <b>Razza:</b> Nano | <b>Età:</b> 50 anni | <b>Altezza:</b> 140 cm | <b>Peso:</b> 95 kg
+      </div>
+
+      <!-- Immagine posizionata al centro -->
+      <img src="https://i.postimg.cc/jqHhmzXN/OIG1-removebg-preview.png" alt="Avatar Profilo" class="avatar">
+
+      <div class="details">
+          <div class="box">
+            <div class="title"><b>Fisionomia</b></div>
+              <div class="scroll-container">
+                  <p style="background-color: #050504;">E' un nano robusto e nodoso, un vero colosso di saggezza e forza, sulla cinquantina. La sua figura massiccia e muscolosa si erge con orgoglio, emanando un'aura di autorità che non passa inosservata. I lunghi capelli e la barba brizzolati fluttuano come una cascata d'argento attorno a un volto segnato da anni di lavoro faticoso, ogni ruga racconta storie di sfide affrontate e superate. I suoi occhi, di un marrone intenso simile a legno pregiato, brillano di determinazione e saggezza, riflettendo la luce dei forni dove ha forgiato il suo destino. Indossa abiti da costruttore consumati ma dignitosi, con una cintura carica di attrezzi che tintinnano melodiosamente ad ogni suo movimento. Le sue mani callose, forti come il ferro battuto, sembrano danzare con grazia mentre maneggiano pietre e strumenti pesanti.</p>
+              </div>
+          </div>
+
+          <div class="box">
+            <div class="title"><b>Carattere</b></div>
+              <div class="scroll-container">
+                  <p style="background-color: #050504;">E' un leader nato, la cui presenza ispira rispetto e ammirazione tra i mercanti. La sua pazienza è leggendaria; affronta ogni problema con la calma di un fiume che scorre lento ma inesorabile. Nonostante il suo aspetto burbero, il suo cuore è grande come le montagne che ha scalato; si preoccupa profondamente del benessere della corporazione mercantile, come un padre premuroso per i suoi figli. È un perfezionista instancabile, sempre alla ricerca della bellezza nascosta nei dettagli di ogni progetto, quasi come un artista che scolpisce una pietra grezza fino a farla brillare. La sua determinazione e il suo spirito indomabile lo rendono un pilastro fondamentale per tutti coloro che lavorano al suo fianco, un mentore affidabile in ogni progetto che intraprendono insieme. La sua presenza infonde fiducia nei membri della corporazione mercantile, ispirandoli a dare il massimo in ogni costruzione e a superare le sfide più ardue.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+</body>
+</html>
